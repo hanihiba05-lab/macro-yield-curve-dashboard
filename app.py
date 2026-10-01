@@ -7,7 +7,7 @@ from src.models import fit_nelson_siegel, nelson_siegel, compute_yield_curve_pca
 
 st.set_page_config(page_title="Macro Yield Curve & Regime Analytics", layout="wide")
 
-st.title("📈 Institutional Macro Yield Curve Dashboard")
+st.title("Institutional Macro Yield Curve Dashboard")
 st.markdown("---")
 
 # Charger les données
@@ -67,4 +67,4 @@ fig_pca.add_trace(go.Scatter(x=factors_df.index, y=factors_df['Level (PC1)'], na
 fig_pca.add_trace(go.Scatter(x=factors_df.index, y=factors_df['Slope (PC2)'], name="Slope (PC2)", line=dict(color='orange')))
 fig_pca.add_trace(go.Scatter(x=factors_df.index, y=factors_df['Curvature (PC3)'], name="Curvature (PC3)", line=dict(color='magenta')))
 fig_pca.update_layout(template="plotly_dark", height=400, xaxis_title="Date", yaxis_title="Factor Score")
-st.plotly_chart(fig_pca, use_container_width=True)  
+st.plotly_chart(fig_pca, use_container_width=True)
